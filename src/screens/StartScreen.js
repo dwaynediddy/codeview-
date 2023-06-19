@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 import { useState } from 'react'
 import { Picker } from '@react-native-picker/picker'
 import FastImage from 'react-native-fast-image';
@@ -9,7 +9,7 @@ const selectLanguageOptions = [
     { label: 'Python', value: 'option3' },
   ];
 
-const StartScreen = () => {
+const StartScreen = ({ navigation }) => {
     const [ option, setOption ] = useState("")
 
   return (
