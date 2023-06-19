@@ -21,7 +21,7 @@ const StartScreen = () => {
         />
       <Text>Select an interview language</Text>
       <Picker
-        selectedValue={setOption}
+        selectedValue={option}
         onValueChange={(itemValue, itemIndex) => setOption(itemValue)}
       >
         {selectLanguageOptions.map((option, index) => (
