@@ -1,4 +1,4 @@
-import { View, ScrollView, SafeAreaView, Button } from 'react-native';
+import { View, ScrollView, SafeAreaView, Button, StyleSheet, Text } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import StartScreen from './src/screens/StartScreen';
@@ -8,12 +8,15 @@ const Stack = createNativeStackNavigator();
 
 function HomeScreen({ navigation }) {
   return (
-    <View>
+    <View style={styles.container}>
+      <Text style={styles.label}>Select an interview language</Text>
       <StartScreen />
+      <View style={styles.button}>
       <Button
-       title='START'
-       onPress={() => navigation.navigate('Interview')}
-      />
+        title='START'
+        onPress={() => navigation.navigate('Interview')}
+        />
+        </View>
     </View>
     
   );
@@ -29,5 +32,19 @@ const App = () => {
   </NavigationContainer>
   );
 };
+
+const styles = StyleSheet.create({
+  button: {
+    top: 580,
+    border: '1px solid blue'
+  },
+  label: {
+    top: 70,
+    left: 80,
+    fontSize: 18,
+    fontWeight: '500',
+    marginBottom: 8,
+  },
+});
 
 export default App;

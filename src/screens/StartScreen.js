@@ -13,20 +13,20 @@ const StartScreen = ({ navigation }) => {
     const [ option, setOption ] = useState("")
 
   return (
-    <View>
+    <View style={styles.container}>
       <FastImage
         source={require('../assets/animated/convo.gif')}
-        style={{ width: 200, height: 200 }}
+        style={styles.image}
         resizeMode={FastImage.resizeMode.contain}
-        />
-      <Text>Select an interview language</Text>
+      />
       <Picker
         selectedValue={option}
         onValueChange={(itemValue, itemIndex) => setOption(itemValue)}
+        style={styles.picker}
       >
         {selectLanguageOptions.map((option, index) => (
           <Picker.Item key={index} label={option.label} value={option.value} />
-        ))}
+          ))}
       </Picker>
     </View>
   )
@@ -34,4 +34,20 @@ const StartScreen = ({ navigation }) => {
 
 export default StartScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
+    top: 200
+  },
+  image: {
+    width: 240,
+    height: 240,
+  },
+  picker: {
+    width: 200,
+    height: 40,
+  },
+})
